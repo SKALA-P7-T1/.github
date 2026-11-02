@@ -45,6 +45,8 @@ PR을 올리면 `CODEOWNERS`에 적힌 대상에게 리뷰 요청이 자동으�
 - 지침을 바꿔야 하면 그 저장소에 Issue를 열어 DevOps 담당에게 요청합니다.
 - `File path is restricted` 오류가 나면 그 파일의 변경을 해당 커밋에서 뺍니다. 되돌리는 커밋을 새로 더해도 앞선 커밋이 push에 포함되어 거부됩니다.
 - 이 파일이 바뀐 `main`을 작업 브랜치에 merge하거나 rebase하는 것은 막히지 않습니다.
+- Claude Code는 v2.1.277 이상을 씁니다. 그보다 낮은 버전은 `AGENTS.md`를 바로 읽지 못합니다.
+- 저장소 폴더나 그 위 폴더에 `CLAUDE.md`, `CLAUDE.local.md`가 있으면 Claude Code는 기본 설정에서 `AGENTS.md`를 읽지 않습니다. 개인 지침은 `~/.claude/CLAUDE.md`에 두거나, `/config`의 Project instructions를 `claude-md-and-agents-md`로 바꿉니다.
 
 ## 커밋 이메일
 
