@@ -1,5 +1,5 @@
 ---
-name: 버그
+name: 버그 보고
 about: 결함을 보고하고 조치 결과를 기록합니다
 title: "[버그] "
 labels: bug
