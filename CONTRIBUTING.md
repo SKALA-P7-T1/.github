@@ -98,10 +98,12 @@ fix: ABC-15 차트 축 단위 오류 수정
 | 저장소 | 승인자 |
 | --- | --- |
 | `frontend` | PM. PM이 없을 때는 `backend` 담당(아래) |
-| `infra` | PM |
+| `infra` | PM. GitHub App이 연 이미지 digest PR(브랜치 `image/*`)은 DevOps 담당도 |
 | `backend` | DevOps 담당 또는 PM |
 | `ai` | `ai` Team의 다른 멤버 |
 | `data` | `data` Team 또는 `ai` Team의 다른 멤버 |
+
+`infra`의 이미지 digest PR은 이미 리뷰를 거친 이미지의 digest만 바꾸고, `infra`의 `ci`가 그 범위를 검사합니다. 그래서 GitHub App이 연 digest PR은 DevOps 담당도 승인할 수 있습니다. App이 남긴 승인은 승인으로 치지 않습니다.
 
 PR을 올리면 `CODEOWNERS`에 적힌 대상에게 리뷰 요청이 자동으로 갑니다.
 
@@ -110,7 +112,7 @@ PR을 올리면 `CODEOWNERS`에 적힌 대상에게 리뷰 요청이 자동으�
 'PM이 없을 때'란 PM이 미리 알린 부재 기간이거나, 리뷰를 요청하고 평일 24시간 안에 답이 없을 때입니다. 이때 작성자가 대체 승인자에게 직접 리뷰를 요청합니다.
 
 - `frontend`의 대체 승인자는 `backend` 담당입니다. 화면 코드 PR만 승인합니다. nginx 설정, `ci.yml`, `CODEOWNERS`를 바꾸는 PR은 PM을 기다립니다.
-- `infra`에는 대체 승인자를 두지 않습니다. 배포 권한과 묶인 저장소이기 때문입니다.
+- `infra`에는 대체 승인자를 두지 않습니다. 배포 권한과 묶인 저장소이기 때문입니다. 단, GitHub App이 연 digest PR은 위 표대로 DevOps 담당도 승인할 수 있습니다.
 
 ### 여러 저장소를 함께 바꿀 때
 
